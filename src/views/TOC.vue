@@ -1,6 +1,6 @@
 <template>
   <el-container class="home_container">
-    <iframe src="/christmas.html" frameborder="0"
+    <iframe src="/html/christmas.html" frameborder="0"
             style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: -1;"></iframe>
     <el-header class="home_header">
       <dev :class="{ hovered: true }"
