@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>圣诞老人</title>
+    <style>
+        @keyframes snow {
+            0% {
+                background-position: 0 0, 0 0, 0 0, 0 0;
+            }
+
+            40% {
+                background-position: 10px 14vmin, -20px 28vmin, 20px 20vmin, 10px 24vmin;
+            }
+
+            60% {
+                background-position: -10px 21vmin, -30px 42vmin, 30px 30vmin, 15px 36vmin;
+            }
+
+            100% {
+                background-position: 0 35vmin, 0 70vmin, 0 50vmin, 0 60vmin;
+            }
+        }
+
+        @keyframes blink {
+
+            0%,
+            6%,
+            100% {
+                height: 12%;
+            }
+
+            3% {
+                height: 0%;
+            }
+        }
+
+        @keyframes moveMustache {
+
+            0%,
+            40%,
+            44%,
+            100% {
+                transform: translate(-100%, 0) rotate(25deg);
+            }
+
+            42% {
+                transform: translate(-100%, 0) rotate(30deg);
+            }
+        }
+
+        @keyframes moveMustache2 {
+
+            0%,
+            40%,
+            44%,
+            100% {
+                transform: rotate(-25deg);
+            }
+
+            42% {
+                transform: rotate(-30deg);
+            }
+        }
+
+        @media (prefers-reduced-motion) {
+            * {
+                animation: none !important;
+            }
+        }
+
+        html {
+            background: #abc;
+            overflow: hidden;
+            background-image: radial-gradient(circle at 50% 50%, white 2.5%, transparent 0),
+            radial-gradient(circle at 30% 90%, white 1.5%, transparent 0),
+            radial-gradient(circle at 70% 10%, white 1%, transparent 0),
+            radial-gradient(circle at 10% 40%, white 1%, transparent 0);
+            background-size: 45vmin 35vmin, 50vmin 70vmin, 60vmin 50vmin, 65vmin 60vmin;
+            background-position: 0 0;
+            animation: snow infinite 7s linear;
+        }
+
+        .canvas {
+            --skin: #fca;
+            --eyes: #630a;
+            --cheeks: #f001;
+            --beard: #eee;
+            --mustache: #fff;
+            --suit: #a00;
+            --belt: #222;
+            --belt-buckle: gold;
+            width: 60vmin;
+            aspect-ratio: 1;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        .canvas::before {
+            content: "";
+            display: block;
+            position: absolute;
+            top: 90%;
+            left: 50%;
+            width: 200vmax;
+            height: 200vmax;
+            background: white;
+            transform: translate(-50%, 0) rotate(1deg);
+            border-radius: 100% / 20%;
+        }
+
+
+        .head {
+            --positionX: 27%;
+            --positionY: 63%;
+            position: absolute;
+            top: 10%;
+            left: 50%;
+            border-radius: 50%;
+            width: 25%;
+            height: 25%;
+            transform: translate(-50%, 0);
+            background: var(--skin);
+        }
+
+        .eye {
+            position: absolute;
+            top: var(--positionY);
+            left: var(--positionX);
+            width: 12%;
+            height: 12%;
+            background: var(--eyes);
+            border-radius: 50%;
+            animation: blink 5s infinite linear;
+        }
+
+        .eye + .eye {
+            left: auto;
+            right: var(--positionX);
+        }
+
+        .cheek {
+            position: absolute;
+            top: calc(var(--positionY) + 7%);
+            left: calc(var(--positionX) - 12%);
+            width: 20%;
+            height: 12%;
+            background: var(--cheeks);
+            border-radius: 50%;
+        }
+
+        .cheek + .cheek {
+            left: auto;
+            right: calc(var(--positionX) - 12%);
+        }
+
+        .beard {
+            position: absolute;
+            top: 10%;
+            left: 50%;
+            width: 30%;
+            height: 40%;
+            background: var(--beard);
+            transform: translate(-50%, 0);
+            border-radius: 100% / 120% 120% 80% 80%;
+        }
+
+        .mustache {
+            position: absolute;
+            top: 88%;
+            left: 52%;
+            width: 40%;
+            height: 40%;
+            background: var(--mustache);
+            border-radius: 100% 10% 100% 0;
+            transform-origin: top right;
+            transform: translate(-100%, 0) rotate(25deg);
+            animation: moveMustache 7s infinite linear;
+        }
+
+        .mustache + .mustache {
+            left: 48%;
+            border-radius: 10% 100% 0 100%;
+            transform-origin: top left;
+            transform: rotate(-25deg);
+            animation: moveMustache2 7s infinite linear;
+        }
+
+        .hat {
+            position: absolute;
+            width: 98%;
+            height: 80%;
+            background: var(--suit);
+            border-radius: 100% 20% 0 0;
+            top: -40%;
+            left: 50%;
+            transform: translate(-50%, 0) rotate(1deg);
+        }
+
+        .hat::before {
+            content: "";
+            display: block;
+            position: absolute;
+            bottom: -17%;
+            left: -5%;
+            width: 110%;
+            height: 40%;
+            border-radius: 100% / 50%;
+            transform: rotate(-2deg);
+            background: radial-gradient(200% 100% at 50% 100%, #0000 30%, var(--mustache) 31%);
+        }
+
+        .hat::after {
+            content: "";
+            display: block;
+            position: absolute;
+            right: -25%;
+            top: -15%;
+            width: 40%;
+            aspect-ratio: 1;
+            border-radius: 50%;
+            background: var(--beard);
+        }
+
+        .body {
+            position: absolute;
+            top: 35%;
+            left: 50%;
+            width: 50%;
+            height: 50%;
+            background: var(--suit);
+            border-radius: 100% / 150% 150% 25% 25%;
+            transform: translate(-50%, 0);
+            background-image: /* buttons */ radial-gradient(circle at 50% 36%, var(--belt) 2.75%, #0000 3%),
+            radial-gradient(circle at 50% 48%, var(--belt) 3%, #0000 3.25%),
+            radial-gradient(circle at 50% 60%, var(--belt) 2.75%, #0000 3%),
+            radial-gradient(circle at 50% 90%, var(--belt) 2.25%, #0000 2.5%),
+                /* belt */ radial-gradient(circle at 50% -50%, transparent 75%, var(--belt) 75.1% 83%, transparent 83.1%),
+                /* flap */ linear-gradient(to right, transparent 42%, white 42.2% 57%, transparent 57.2%);
+            clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 51% 100%, 50% 96%, 49% 100%, 0% 100%);
+        }
+
+        .belt {
+            position: absolute;
+            top: 75%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 23%;
+            height: 15%;
+            background: linear-gradient(var(--belt-buckle) 0 0) 75% 50% / 25% 12% no-repeat,
+            linear-gradient(var(--belt) 0 0) 50% 50% / 85% 80% no-repeat,
+            var(--belt-buckle);
+        }
+
+
+        .arms {
+            position: absolute;
+            top: 37%;
+            left: 50%;
+            transform: translate(-50%, 0);
+            width: 65%;
+            height: 40%;
+            background: #a00;
+            border-radius: 100% / 170% 170% 25% 25%;
+            background-image: linear-gradient(transparent 20%, #0003);
+        }
+
+        .hand {
+            --positionX: 18%;
+            position: absolute;
+            top: 70%;
+            left: var(--positionX);
+            width: 13%;
+            height: 13%;
+            background: var(--belt);
+            border-radius: 50%;
+        }
+
+        .hand + .hand {
+            left: auto;
+            right: var(--positionX);
+        }
+
+        .leg {
+            position: absolute;
+            top: 75%;
+            left: 29%;
+            width: 19%;
+            height: 25%;
+            background: var(--suit);
+            transform: skew(2deg);
+            background-image: linear-gradient(#0002, transparent 70%, var(--belt) 0);
+        }
+
+        .leg + .leg {
+            left: 52%;
+        }
+
+        .leg::after {
+            content: "";
+            display: block;
+            position: absolute;
+            bottom: 0;
+            left: -6%;
+            width: 110%;
+            height: 20%;
+            background: black;
+            border-radius: 50% / 100% 100% 0 0;
+        }
+
+        .leg + .leg::after {
+            left: -4%;
+        }
+    </style>
+</head>
+
+<body>
+<div class="canvas" role="img" aria-label="一个站在雪地小山上的圣诞老人卡通形象。">
+    <div class="hand"></div>
+    <div class="hand"></div>
+    <div class="arms"></div>
+    <div class="leg"></div>
+    <div class="leg"></div>
+    <div class="body">
+        <div class="belt"></div>
+    </div>
+    <div class="beard"></div>
+    <div class="head">
+        <div class="cheek"></div>
+        <div class="cheek"></div>
+        <div class="eye"></div>
+        <div class="eye"></div>
+        <div class="mustache"></div>
+        <div class="mustache"></div>
+        <div class="hat"></div>
+    </div>
+</div>
+</body>
+
+</html>
