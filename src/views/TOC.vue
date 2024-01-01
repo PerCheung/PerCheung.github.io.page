@@ -1,56 +1,40 @@
 <template>
   <el-container class="home_container">
-    <iframe src="/html/christmas.html" frameborder="0"
-            style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: -1;"></iframe>
     <el-header class="home_header">
-      <dev :class="{ hovered: true }"
-           style="cursor: pointer;"
-           @click="$router.push('/')">
-        鸿雁长飞光不度
-        <img src="@/assets/code.png" style="height: 0.7em" alt="NO">
-        鱼龙浅跃水成文
+      <div class="header_left">
+        <el-button
+            icon="el-icon-s-home"
+            size="small"
+            @click="$router.push('/')"
+            plain>
+          返回我的主页
+        </el-button>
+      </div>
+      <dev class="header_center">
+        <img src="@/assets/toc.png" style="height: 0.7em" alt="@TOC">&nbsp;
+        我的博客文章目录
       </dev>
+      <div class="header_right">
+        <el-input
+            size="small"
+            v-model="search"
+            prefix-icon="el-icon-search"
+            placeholder="搜索文章">
+        </el-input>
+      </div>
     </el-header>
     <el-main class="home_main">
-      <div class="table-container">
-        <el-table
-            :data="tableData.filter(data => !search || data.name.toLowerCase().includes(search.toLowerCase()))"
-            style="width:100%;">
-          <el-table-column prop="name">
-            <template slot="header" slot-scope="scope">
-              <div class="centered-content">
-                <span :class="{ 'larger-font': isHovered }"
-                      @mouseover="isHovered=true"
-                      @mouseout="isHovered=false">
-                  <img src="@/assets/toc.png" style="height: 0.8em" alt="@TOC">
-                  我的博客文章目录
-                </span>
-              </div>
-            </template>
-          </el-table-column>
-          <el-table-column
-              width="150px"
-              align="center">
-            <template slot="header" slot-scope="scope">
-              <el-input
-                  v-model="search"
-                  size="small"
-                  prefix-icon="el-icon-search"
-                  placeholder="搜索文章"/>
-            </template>
-            <template slot-scope="scope">
-              <!--<el-button-->
-              <!--  size="small"-->
-              <!--  type="primary"-->
-              <!--  @click="clickmd(scope.$index, scope.row)">阅读-->
-              <!--</el-button>-->
-              <el-button
-                  size="small"
-                  type="primary">阅读
-              </el-button>
-            </template>
-          </el-table-column>
-        </el-table>
+      <div class="home_main_toc">
+        <el-card class="custom_card" v-for="item in filteredToc" :key="item">
+          <el-card class="custom_card1">
+            <el-link style="color: #ebe4d8;font-size: 1.2em;font-weight: bold;"
+                     :href="getLink(item)"
+                     :underline="false"
+                     target="_blank">
+              {{ item }}
+            </el-link>
+          </el-card>
+        </el-card>
       </div>
     </el-main>
     <el-footer class="home_footer">Copyright © 2023 Peter Cheung 保留所有权利</el-footer>
@@ -62,28 +46,31 @@ export default {
   name: 'TOC',
   data() {
     return {
-      isHovered: false,
-      tableData: [{
-        name: '李小虎'
-      }, {
-        name: '王小虎'
-      }, {
-        name: '马小虎'
-      }, {
-        name: '王小虎'
-      }],
-      search: ''
+      search: '',
+      toc: [
+        "初步领悟C指针",
+        "搭建多人聊天室（保姆级教学，从0开始）"
+      ]
     };
   },
-  created() {
+  computed: {
+    filteredToc() {
+      return this.toc.filter(item =>
+          !this.search || item.toLowerCase().includes(this.search.toLowerCase())
+      );
+    }
   },
-  methods: {}
+  methods: {
+    getLink(item) {
+      return `https://percheung.github.io/blog/${item}`;
+    }
+  }
 }
 </script>
 
 <style scoped>
 .home_container {
-  background-color: #acbbcc;
+  background-color: #ebe4d8;
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
@@ -96,11 +83,30 @@ export default {
 }
 
 .home_header {
-  background-color: transparent;
-  color: white;
-  text-align: center;
+  background-color: #78334f;
+  color: #ebe4d8;
+  display: flex;
   align-items: center;
   justify-content: space-between;
+  padding: 20px;
+}
+
+.header_left {
+  display: flex;
+  align-items: center;
+  width: 15%;
+}
+
+.header_center {
+  display: flex;
+  align-items: center;
+  font-size: 1.2em;
+}
+
+.header_right {
+  display: flex;
+  align-items: center;
+  width: 15%;
 }
 
 .home_footer {
@@ -111,47 +117,29 @@ export default {
   line-height: 60px;
 }
 
-.table-container {
-  width: 80%;
+.home_main_toc {
+  width: 60%;
   margin: 0 auto;
 }
 
-.centered-content {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin: 10px 0;
-  font-size: 1.5em;
-}
-
-.larger-font {
-  font-size: 1.2em;
-}
-
-/deep/ .table-container .el-table,
-/deep/ .table-container .el-table__expanded-cell {
-  background-color: transparent;
-}
-
-/deep/ .table-container .el-table th,
-/deep/ .table-container .el-table tr,
-/deep/ .table-container .el-table__header-wrapper th {
-  background-color: transparent;
-  color: white;
-}
-
-/deep/ .table-container .el-table td {
-  background-color: transparent;
+.custom_card {
+  margin-top: 0;
+  margin-bottom: 20px;
+  background-color: #5f7f99;
   border: none;
-  font-weight: bold;
+  border-radius: 0;
+  box-shadow: 0 5px 4px rgba(0, 0, 0, 0.1);
+  transition: box-shadow 0.2s ease-in-out;
 }
 
-/deep/ .table-container .el-table .cell {
-  line-height: 1.5em;
-  font-size: 1.5em;
+.custom_card:hover {
+  box-shadow: 0 10px 8px rgba(0, 0, 0, 0.2);
 }
 
-/deep/ .table-container .el-table::before {
-  display: none;
+.custom_card1 {
+  background-color: #5f7f99;
+  border: 2px solid #84b1d3;
+  margin: -16px;
+  border-radius: 0;
 }
 </style>
