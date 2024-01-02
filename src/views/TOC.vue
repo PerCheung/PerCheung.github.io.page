@@ -57,13 +57,7 @@ export default {
     return {
       isHovered: false,
       search: '',
-      toc: [
-        "如何搭建github.io网页",
-        "搭建多人聊天室（保姆级教学，从0开始）",
-        "初步领悟C指针",
-        "正则表达式笔记",
-        "卓别林的演讲"
-      ]
+      toc: ["HTML5学习记录", "markdown各种语法测试", "初步领悟C指针", "卓别林的演讲", "如何搭建github.io网页", "搭建多人聊天室（保姆级教学，从0开始）", "正则表达式笔记"]
     };
   },
   computed: {
