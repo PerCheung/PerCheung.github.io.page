@@ -1,4 +1,5 @@
-###### 点击返回[🔗我的博客文章目录](https://percheung.github.io/#/toc)
+点击返回[🔗我的博客文章目录](https://percheung.github.io/#/toc)
+{:toc}
 # 如何搭建github.io网页
 
 *在我的理解里，github.io，不是博客，这是服务器。我的博客网址为*🔗[https://percheung.github.io](https://percheung.github.io/)
@@ -49,7 +50,8 @@ theme: jekyll-theme-time-machine
 这是我的`_config.yml`文件内容。
 
 ```yaml
-title: My Blog
-description: 鸿雁长飞光不度，鱼龙浅跃水成文
+title: 鸿雁长飞光不度，鱼龙潜跃水成文
+description: This is my blog
+theme: jekyll-theme-primer
 ```
 

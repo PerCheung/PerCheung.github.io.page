@@ -9,7 +9,7 @@
         <dev :class="{ hovered: drawer }"
              style="cursor: pointer;transition: font-size 0.2s ease;"
              @click="drawer=true">
-          求饥若渴
+          求知若渴
           <img src="@/assets/code.png" style="height: 0.8em" alt="NO">
           虚心若愚
         </dev>

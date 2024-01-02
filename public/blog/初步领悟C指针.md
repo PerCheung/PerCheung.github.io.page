@@ -1,4 +1,6 @@
-###### 点击返回[🔗我的博客文章目录](https://percheung.github.io/#/toc)
+点击返回[🔗我的博客文章目录](https://percheung.github.io/#/toc)
+{:toc}
+
 # 初步领悟C指针
 
 ## 1.不是很难，先看指针结构
