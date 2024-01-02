@@ -7,7 +7,7 @@
               style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: -1;"></iframe>
       <el-header class="home_header" height="2em">
         <dev :class="{ hovered: drawer }"
-             style="cursor: pointer;"
+             style="cursor: pointer;transition: font-size 0.2s ease;"
              @click="drawer=true">
           求饥若渴
           <img src="@/assets/code.png" style="height: 0.8em" alt="NO">

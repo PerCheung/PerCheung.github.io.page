@@ -5,17 +5,18 @@
     <el-header class="home_header">
       <div class="header_left">
         <el-button
-            style="color:black"
-            icon="el-icon-s-home"
+            icon="el-icon-back"
             size="small"
             @click="$router.push('/')"
-            plain>
+            type="primary" plain>
           返回我的主页
         </el-button>
       </div>
-      <dev class="header_center">
+      <dev class="header_center"
+           @mouseover="changeFontSize(true)"
+           @mouseout="changeFontSize(false)">
         <img src="@/assets/toc.png" style="height: 0.7em" alt="@TOC">&nbsp;
-        我的博客文章目录
+        我的博客
       </dev>
       <div class="header_right">
         <el-input
@@ -28,16 +29,14 @@
     </el-header>
     <el-main class="home_main">
       <div class="home_main_toc">
-        <el-card class="custom_card" v-for="item in filteredToc" :key="item">
-          <el-card class="custom_card1">
-            <el-link style="color: white;font-size: 1.2em;font-weight: bold;"
-                     :href="getLink(item)"
-                     :underline="false"
-                     target="_blank">
-              {{ item }}
-            </el-link>
-          </el-card>
-        </el-card>
+        <div class="custom_card" v-for="item in filteredToc" :key="item">
+          <el-link :href="getLink(item)"
+                   :underline="false"
+                   target="_blank">
+            <i class="el-icon-paperclip"></i>
+            {{ item }}
+          </el-link>
+        </div>
       </div>
     </el-main>
     <el-footer class="home_footer">Copyright © 2023 Peter Cheung 保留所有权利</el-footer>
@@ -49,11 +48,13 @@ export default {
   name: 'TOC',
   data() {
     return {
+      isHovered: false,
       search: '',
       toc: [
-        "初步领悟C指针",
+        "如何搭建github.io网页",
         "搭建多人聊天室（保姆级教学，从0开始）",
-        "如何搭建github.io网页"
+        "初步领悟C指针",
+        "正则表达式笔记"
       ]
     };
   },
@@ -65,6 +66,9 @@ export default {
     }
   },
   methods: {
+    changeFontSize(isHovered) {
+      this.isHovered = isHovered;
+    },
     getLink(item) {
       return `https://percheung.github.io/blog/${item}`;
     }
@@ -78,7 +82,7 @@ export default {
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
-  color: white;
+  color: black;
   height: 100%;
   position: fixed;
   top: 0;
@@ -87,11 +91,10 @@ export default {
 }
 
 .home_header {
-  background-color: #78334f;
+  background-color: transparent;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 20px;
 }
 
 .header_left {
@@ -101,9 +104,20 @@ export default {
 }
 
 .header_center {
+  color: #2768d7;
+  font-weight: bold;
   display: flex;
   align-items: center;
+  font-size: 1.1em;
+  transition: font-size 0.2s ease;
+}
+
+.header_center:hover {
   font-size: 1.2em;
+}
+
+.header_center:hover img {
+  height: 0.84em;
 }
 
 .header_right {
@@ -128,21 +142,15 @@ export default {
 .custom_card {
   margin-top: 0;
   margin-bottom: 20px;
-  background-color: #5f7f99;
-  border: none;
-  border-radius: 0;
-  box-shadow: 0 5px 4px rgba(0, 0, 0, 0.1);
+  padding: 20px 30px;
+  background-color: #edf8ff;
+  border-left: 5px solid #63c0ff;
+  border-radius: 4px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   transition: box-shadow 0.2s ease-in-out;
 }
 
 .custom_card:hover {
-  box-shadow: 0 10px 8px rgba(0, 0, 0, 0.2);
-}
-
-.custom_card1 {
-  background-color: #5f7f99;
-  border: 2px solid #84b1d3;
-  margin: -16px;
-  border-radius: 0;
+  box-shadow: 0 8px 8px rgba(0, 0, 0, 0.2);
 }
 </style>
