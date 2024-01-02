@@ -1,4 +1,5 @@
 点击返回[🔗我的博客文章目录](https://percheung.github.io/#/toc)
+* 目录
 {:toc}
 
 # 初步领悟C指针
