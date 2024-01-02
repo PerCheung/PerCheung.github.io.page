@@ -41,4 +41,4 @@
 ## 三、如何学习HTML5？
 以前的HTML都不用学了，现在学好H5就可以，H5作为最新一代网络语言（~~2006年出现，现在年龄还在增长~~ ），仍处于完善之中。然而，大部分现代浏览器已经具备了某些 HTML5 支持。
 
-**学习链接在这里——[菜鸟教程|HTML5](https://www.runoob.com/html/html5-intro.html)**
+**学习链接在这里——[菜鸟教程HTML5](https://www.runoob.com/html/html5-intro.html)**
