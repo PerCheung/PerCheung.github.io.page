@@ -4,5 +4,5 @@ title: 鸿雁长飞光不度，鱼龙潜跃水成文
 description: This is my blog
 # 主题风格
 theme: jekyll-theme-primer
-# 目录功能
+# markdown增强功能
 markdown: kramdown

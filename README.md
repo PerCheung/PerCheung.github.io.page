@@ -1,19 +1,21 @@
 # PerCheung.github.io.page
 
-> 这是我的[PerCheung.github.io](https://github.com/PerCheung/PerCheung.github.io)项目的页面代码
+> 这是我的[PerCheung.github.io](https://github.com/PerCheung/PerCheung.github.io)项目的页面的vue源代码。具体使用教程参考🔗[https://percheung.github.io/blog/从0搭建github.io网页](https://percheung.github.io/blog/从0搭建github.io网页)
 
-## Project setup
+## 安装
 
 ```bash
 npm install
 ```
 
-## Compiles and hot-reloads for development
+## 运行
+
 ```bash
 npm run serve
 ```
 
-## Compiles and minifies for production
+## 打包
 ```bash
 npm run build
 ```
+
