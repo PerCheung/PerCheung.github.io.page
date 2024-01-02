@@ -1,8 +1,11 @@
 <template>
   <el-container class="home_container">
+    <iframe src="/html/christmas.html" frameborder="0"
+            style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: -1;"></iframe>
     <el-header class="home_header">
       <div class="header_left">
         <el-button
+            style="color:black"
             icon="el-icon-s-home"
             size="small"
             @click="$router.push('/')"
@@ -27,7 +30,7 @@
       <div class="home_main_toc">
         <el-card class="custom_card" v-for="item in filteredToc" :key="item">
           <el-card class="custom_card1">
-            <el-link style="color: #ebe4d8;font-size: 1.2em;font-weight: bold;"
+            <el-link style="color: white;font-size: 1.2em;font-weight: bold;"
                      :href="getLink(item)"
                      :underline="false"
                      target="_blank">
@@ -49,7 +52,8 @@ export default {
       search: '',
       toc: [
         "初步领悟C指针",
-        "搭建多人聊天室（保姆级教学，从0开始）"
+        "搭建多人聊天室（保姆级教学，从0开始）",
+        "如何搭建github.io网页"
       ]
     };
   },
@@ -70,7 +74,7 @@ export default {
 
 <style scoped>
 .home_container {
-  background-color: #ebe4d8;
+  background-color: #acbbcc;
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
@@ -84,7 +88,6 @@ export default {
 
 .home_header {
   background-color: #78334f;
-  color: #ebe4d8;
   display: flex;
   align-items: center;
   justify-content: space-between;
