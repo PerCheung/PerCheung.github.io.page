@@ -27,6 +27,13 @@
         </el-input>
       </div>
     </el-header>
+    <hr style="
+              border: none;
+              height: 1px;
+              width: 58%;
+              background-color: #eaecef;
+              margin: 0 auto;
+    ">
     <el-main class="home_main">
       <div class="home_main_toc">
         <div class="custom_card" v-for="item in filteredToc" :key="item">
@@ -95,6 +102,7 @@ export default {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  margin: 10px 20px;
 }
 
 .header_left {
@@ -108,12 +116,12 @@ export default {
   font-weight: bold;
   display: flex;
   align-items: center;
-  font-size: 1.1em;
-  transition: font-size 0.2s ease;
+  font-size: 1.2em;
+  transition: font-size 0.3s ease;
 }
 
 .header_center:hover {
-  font-size: 1.2em;
+  font-size: 1.5em;
 }
 
 .header_center:hover img {
