@@ -27,14 +27,19 @@
         </el-input>
       </div>
     </el-header>
-    <hr style="
-              border: none;
-              height: 1px;
-              width: 58%;
-              background-color: #eaecef;
-              margin: 0 auto;
-    ">
-    <el-main class="home_main">
+    <div class="header_right_mobile">
+      <el-input
+          v-model="search"
+          size="small"
+          prefix-icon="el-icon-search"
+          placeholder="搜索文章">
+      </el-input>
+    </div>
+    <hr class="header_hr">
+    <el-main class="home_main"
+             v-loading="loading"
+             element-loading-text="正在查找文章"
+             element-loading-background="transparent">
       <div class="home_main_toc">
         <div class="custom_card" v-for="item in filteredToc" :key="item">
           <el-link :href="getLink(item)"
@@ -57,7 +62,8 @@ export default {
     return {
       isHovered: false,
       search: '',
-      toc: ["HTML5学习记录", "markdown各种语法测试", "从0搭建github.io网页", "初步领悟C指针", "卓别林的演讲", "搭建多人聊天室（保姆级教学，从0开始）", "正则表达式笔记"]
+      toc: [],
+      loading: true
     };
   },
   computed: {
@@ -67,12 +73,25 @@ export default {
       );
     }
   },
+  created() {
+    this.fetchTocData();
+  },
   methods: {
     changeFontSize(isHovered) {
       this.isHovered = isHovered;
     },
     getLink(item) {
       return `https://percheung.github.io/blog/${item}`;
+    },
+    async fetchTocData() {
+      try {
+        const response = await fetch('https://percheung.github.io/blog/toc.json');
+        // 将获取的JSON数据赋值给组件的toc数据
+        this.toc = await response.json();
+        this.loading = false;
+      } catch (error) {
+        console.error('Error fetching toc data:', error);
+      }
     }
   }
 }
@@ -100,60 +119,124 @@ export default {
   margin: 10px 20px;
 }
 
-.header_left {
-  display: flex;
-  align-items: center;
-  width: 15%;
-}
-
-.header_center {
-  color: #2768d7;
-  font-weight: bold;
-  display: flex;
-  align-items: center;
-  font-size: 1.2em;
-  transition: font-size 0.3s ease;
-}
-
-.header_center:hover {
-  font-size: 1.5em;
-}
-
-.header_center:hover img {
-  height: 0.84em;
-}
-
-.header_right {
-  display: flex;
-  align-items: center;
-  width: 15%;
-}
-
 .home_footer {
   background-color: transparent;
   text-align: center;
   color: rgb(142, 142, 145);
-  font-size: 16px;
-  line-height: 60px;
+  font-size: 0.8em;
+  line-height: 80px;
 }
 
-.home_main_toc {
-  width: 60%;
-  margin: 0 auto;
+@media screen and (max-width: 1023px) {
+  .header_left {
+    display: none;
+  }
+
+  .header_hr {
+    border: none;
+    height: 1px;
+    width: 80%;
+    background-color: #eaecef;
+    margin: 0 auto;
+  }
+
+  .custom_card {
+    width: 72%;
+    margin: 0 auto 15px auto;
+    padding: 13px 30px;
+    background-color: #edf8ff;
+    border-left: 5px solid #63c0ff;
+    border-radius: 4px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.2s ease-in-out;
+  }
+
+  .custom_card:hover {
+    box-shadow: 0 8px 8px rgba(0, 0, 0, 0.2);
+  }
+
+  .header_center {
+    color: #2768d7;
+    width: 100%;
+    margin: 10px auto;
+    font-weight: bold;
+    font-size: 1.2em;
+    transition: font-size 0.3s ease;
+  }
+
+  .header_center:hover {
+    font-size: 1.5em;
+  }
+
+  .header_center:hover img {
+    height: 0.84em;
+  }
+
+  .header_right {
+    display: none;
+  }
+
+  .header_right_mobile {
+    width: 80%;
+    margin: -5px auto 10px auto;
+  }
 }
 
-.custom_card {
-  margin-top: 0;
-  margin-bottom: 20px;
-  padding: 20px 30px;
-  background-color: #edf8ff;
-  border-left: 5px solid #63c0ff;
-  border-radius: 4px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-  transition: box-shadow 0.2s ease-in-out;
-}
+@media screen and (min-width: 1024px) {
+  .header_left {
+    display: flex;
+    align-items: center;
+    width: 15%;
+  }
 
-.custom_card:hover {
-  box-shadow: 0 8px 8px rgba(0, 0, 0, 0.2);
+  .custom_card {
+    width: 58%;
+    margin: 0 auto 20px auto;
+    padding: 20px 30px;
+    background-color: #edf8ff;
+    border-left: 5px solid #63c0ff;
+    border-radius: 4px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.2s ease-in-out;
+  }
+
+  .custom_card:hover {
+    box-shadow: 0 8px 8px rgba(0, 0, 0, 0.2);
+  }
+
+  .header_hr {
+    border: none;
+    height: 1px;
+    width: 60%;
+    background-color: #eaecef;
+    margin: 0 auto;
+  }
+
+  .header_center {
+    color: #2768d7;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    font-size: 1.2em;
+    transition: font-size 0.3s ease;
+  }
+
+  .header_center:hover {
+    font-size: 1.5em;
+  }
+
+  .header_center:hover img {
+    height: 0.84em;
+  }
+
+  .header_right {
+    display: flex;
+    align-items: center;
+    width: 15%;
+  }
+
+  .header_right_mobile {
+    display: none;
+  }
 }
 </style>
