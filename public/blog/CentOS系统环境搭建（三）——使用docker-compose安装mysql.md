@@ -2,7 +2,7 @@
 * 目录
 {:toc}
 
-# CentOS系统环境搭建（三）——使用docker-compose安装mysql
+# CentOS系统环境搭建（三）——使用docker-compose安装<img src="https://percheung.github.io/blogImg/mysql.png" width="60px" alt="" />mysql
 
 ## MySQL8
 

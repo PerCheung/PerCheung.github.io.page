@@ -3,6 +3,10 @@
 
 *Welcome to the AI era!*
 
+<div style="text-align: center;">
+  <img src="https://percheung.github.io/blogImg/openai.png" width="20%" alt="Typora" />
+</div>
+
 **使用docker compose安装**
 
 在`/usr/local`文件夹下创建`chatgpt`

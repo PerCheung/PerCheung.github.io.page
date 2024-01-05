@@ -5,6 +5,9 @@
 
 >在我们的日常开发中经常会遇到这种情况：手上有好几个项目，每个项目的需求不同，进而不同项目必须依赖不同版的 NodeJS 运行环境。如果没有一个合适的工具，这个问题将非常棘手。由此[nvm](https://github.com/creationix/nvm)应运而生。nvm是一个node管理工具。使用`nvm` Node版本管理器安装Node.JS。`nvm`允许您在同一台计算机上安装多个Node.JS版本。并且自由切换node版本。
 
+<div style="text-align: center;">
+  <img src="https://percheung.github.io/blogImg/nvm-logo-color.png" width="50%" alt="nvm" />
+</div>
 
 ## 1.安装
 

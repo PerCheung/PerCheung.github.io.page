@@ -47,7 +47,7 @@
                  @mouseout="reset_csdn"
                  :style="{ width: isHovered_csdn ? '100px' : '70px' }"/>
           </el-link>
-          <el-link style="width: 100px;height: 100px" href="https://chatgptpercheung.vercel.app" target="_blank"
+          <el-link style="width: 100px;height: 100px" href="https://percheung.vercel.app" target="_blank"
                    :underline="false">
             <img src="@/assets/openai.png"
                  alt="openai"

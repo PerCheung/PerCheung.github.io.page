@@ -5,6 +5,10 @@
 
 ## 本文讲解的名词有，JVM，程序计数器，栈，堆，方法区，幸存区，元空间，永久代，老年代，新生代，伊甸园区，常量池等等。
 
+<div style="text-align: center;">
+  <img src="https://percheung.github.io/blogImg/JVM.png" width="30%" alt="JVM" />
+</div>
+
 ## 什么是JVM？
 
 JVM是Java Virtual Machine（Java虚拟机）的缩写，可以理解成一个专门运行.java文件的微型操作系统。

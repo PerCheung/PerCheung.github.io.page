@@ -4,6 +4,10 @@
 
 # CSS选择器总结
 
+<div style="text-align: center;">
+  <img src="https://percheung.github.io/blogImg/css.png" width="30%" alt="maven" />
+</div>
+
 ## 1. 类别选择器
 
 类选择器根据类名来选择，前面以”.”来标志：

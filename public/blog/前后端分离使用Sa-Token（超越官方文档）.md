@@ -2,7 +2,7 @@
 * 目录
 {:toc}
 
-# 前后端分离使用Sa-Token（超越官方文档）
+# 前后端分离使用<img src="https://percheung.github.io/blogImg/sa-token.png" width="70px" alt="sa-token" />Sa-Token（超越官方文档）
 
 ## 前言
 Sa-Token的官方文档链接[🔗https://sa-token.cc/doc.html](https://sa-token.cc/doc.html)在此。
