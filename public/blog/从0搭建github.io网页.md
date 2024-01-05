@@ -43,7 +43,7 @@
 
 ![image-20231226165946916](https://percheung.github.io/blogImg/202312261659154.png)
 
-就这么简答，你已经获得了链接为{你的GitHub账户名}.github.io的主页，属于你！
+就这么简单，你已经获得了链接为{你的GitHub账户名}.github.io的主页，属于你！
 
 ## 3.github.io仓库的初始化
 
@@ -266,3 +266,23 @@ filteredToc() {
 ```
 
 > 至此，不讲了。博客的搭建是需要自己钻研学习的，更加细枝末节的地方我想不到还有什么好讲的，只能在实际操作中，自己掌握吧。
+
+## 6.限制
+
+### [使用限制](https://docs.github.com/zh/pages/getting-started-with-github-pages/about-github-pages#usage-limits)
+
+GitHub Pages 站点受到以下使用限制的约束：
+
+- GitHub Pages 源存储库的建议限制为 1 GB。有关详细信息，请参阅“[关于 GitHub 上的大文件](https://docs.github.com/zh/repositories/working-with-files/managing-large-files/about-large-files-on-github#file-and-repository-size-limitations)”
+  
+- 发布的 GitHub Pages 站点不得超过 1 GB。
+  
+- 如果花费的时间超过 10 分钟，GitHub Pages 部署将超时。
+  
+- GitHub Pages 站点的软带宽限制为每月 100 GB。
+  
+- GitHub Pages 站点的软限制为每小时 10 次生成。 如果使用自定义 GitHub Actions 工作流生成和发布站点，则此限制不适用。
+  
+- 为了为所有 GitHub Pages 站点提供一致的服务质量，可能会实施速率限制。 这些速率限制无意干扰 GitHub Pages 的合法使用。 如果你的请求触发了速率限制，你将收到相应响应，其中包含 HTTP 状态代码 `429` 以及信息性 HTML 正文。
+
+如果你的站点超出这些使用配额，我们可能无法为你的站点提供服务；或者你可能收到来自 GitHub 支持的礼貌电子邮件，建议降低站点对服务器影响的策略，包括将第三方内容分发网络 (CDN) 置于你的站点前，利用GitHub 功能（如发行版）或转用可能更符合需求的其他托管服务。

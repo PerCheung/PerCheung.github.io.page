@@ -137,7 +137,9 @@ JDK（Java Development Kit，Java开发工具包）> JRE（Java Runtime Environm
 ##### 2. 大名鼎鼎的常量池就在方法区，不过，JDK8的HotSpot VM中，运行时常量池在方法区，而字符串常量池被移到了堆中了。此时常量池存储的就是字符串的引用了。
 
 > 方法区会存储类信息、静态变量、常量（JDK8 之后不存放字符串常量）、本地机器指令。
+
 ## JVM调优的参数
+
 > -Xms2g 初始化推⼤⼩为 2g；
 > -Xmx2g 堆最⼤内存为 2g；
 > -XX:NewRatio=4 设置年轻的和⽼年代的内存⽐例为 1:4；

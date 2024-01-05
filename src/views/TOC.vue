@@ -86,8 +86,21 @@ export default {
     async fetchTocData() {
       try {
         const response = await fetch('https://percheung.github.io/blog/toc.json');
-        // 将获取的JSON数据赋值给组件的toc数据
-        this.toc = await response.json();
+        const jsonData = await response.json();
+
+        // 对jsonData进行排序
+        jsonData.sort((a, b) => {
+          if (a[0] !== b[0]) {
+            // 简体中文的排序
+            return a.localeCompare(b, 'zh-Hans-CN', {sensitivity: 'accent'});
+          } else {
+            // 首字母相等时按照长度排序
+            return a.length - b.length;
+          }
+        });
+
+        this.toc = jsonData;
+
         this.loading = false;
       } catch (error) {
         console.error('Error fetching toc data:', error);
