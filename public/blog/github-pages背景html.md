@@ -5,6 +5,6 @@
 
 # github-pages背景html
 
-## [圣诞老人](https://percheung.github.io/html/christmas.html)
+## [圣诞老人](https://percheung.github.io/html/christmas)
 
-## [黑洞](https://percheung.github.io/html/galaxy.html)
+## [黑洞](https://percheung.github.io/html/galaxy)

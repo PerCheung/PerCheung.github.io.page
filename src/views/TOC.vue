@@ -1,7 +1,27 @@
 <template>
   <el-container class="home_container">
+    <div @click="toggleGalaxyLayer"
+         style="
+         position: fixed;
+         bottom: 40px;
+         left: 20px;
+         cursor: pointer;
+         border-radius: 50%;
+         overflow: hidden;
+         transition: width 0.5s, height 0.5s;
+         z-index: 2;"
+         @mouseover="increase_galaxy"
+         @mouseout="reset_galaxy"
+         :style="{
+         width: isHovered_galaxy_width ? '100px' : '70px',
+         height: isHovered_galaxy_height ?'100px' : '70px'}"
+    >
+      <iframe src="/html/galaxy.html" frameborder="0"
+              style="width: 100%; height: 100%; pointer-events: none;"></iframe>
+    </div>
     <iframe src="/html/galaxy.html" frameborder="0"
-            style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: -1;"></iframe>
+            :style="{ position: 'fixed', top: '0', left: '0', width: '100%', height: '100%', zIndex: galaxy }"
+    ></iframe>
     <el-header class="home_header">
       <div class="header_left">
         <el-button
@@ -64,6 +84,9 @@ export default {
   name: 'TOC',
   data() {
     return {
+      galaxy: -1,
+      isHovered_galaxy_width: false,
+      isHovered_galaxy_height: false,
       isHovered: false,
       search: '',
       toc: [],
@@ -81,6 +104,17 @@ export default {
     this.fetchTocData();
   },
   methods: {
+    toggleGalaxyLayer() {
+      this.galaxy = this.galaxy === -1 ? 1 : -1;
+    },
+    increase_galaxy() {
+      this.isHovered_galaxy_width = true;
+      this.isHovered_galaxy_height = true;
+    },
+    reset_galaxy() {
+      this.isHovered_galaxy_width = false;
+      this.isHovered_galaxy_height = false;
+    },
     changeFontSize(isHovered) {
       this.isHovered = isHovered;
     },
