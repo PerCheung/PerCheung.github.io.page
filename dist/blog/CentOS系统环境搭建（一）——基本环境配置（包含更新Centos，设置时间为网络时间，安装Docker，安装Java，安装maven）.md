@@ -1,13 +1,16 @@
 点击返回[🔗我的博客文章目录](https://percheung.github.io/#/toc)
 * 目录
 {:toc}
+<div onclick="window.scrollTo({ top: 0, behavior: 'smooth' });" style="background-color: transparent; position: fixed; bottom: 20px; right: 40px; padding: 10px 10px 5px 10px; cursor: pointer; z-index: 10; border-radius: 13%; box-shadow: 0.5px 3px 7px rgba(0, 0, 0, 0.3);"><img src="https://percheung.github.io/blogImg/backTop.png" alt="TOP" style="background-color: transparent; width: 30px;"></div>
+
 # CentOS系统环境搭建（一）——基本环境配置（包含更新Centos，设置时间为网络时间，安装Docker，安装Java，安装maven）
 
 ## 1.更新
 
 <div style="text-align: center;">
-  <img src="https://percheung.github.io/blogImg/centos.png" width="20%" alt="centos" />
+  <img src="https://percheung.github.io/blogImg/centos.png" width="10%" alt="centos" />
 </div>
+
 
 更新 yum（包括centos内核）
 
@@ -18,8 +21,9 @@ yum update
 ## 2.设置时间
 
 <div style="text-align: center;">
-  <img src="https://percheung.github.io/blogImg/time.png" width="20%" alt="time" />
+  <img src="https://percheung.github.io/blogImg/time.png" width="10%" alt="time" />
 </div>
+
 
 ### 2.1 设置网络时间
 
@@ -47,10 +51,22 @@ ntpdate 0.asia.pool.ntp.org
 hwclock --systohc
 ```
 
-使用date命令查看Centos时区
+启动 NTP 服务
 
 ```bash
-date -R
+service ntpd start
+```
+
+开机自启动
+
+```bash
+systemctl enable ntpd
+```
+
+验证时间同步
+
+```bash
+ntpq -p
 ```
 
 查看系统的硬件时间，即BIOS时间
@@ -60,6 +76,12 @@ hwclock -r
 ```
 
 ### 2.2 修改时区
+
+使用date命令查看Centos时区
+
+```bash
+date -R
+```
 
 通常通过以下方法修改系统的时区就可以了，不必修改硬件时间。将时区信息文件拷贝至/etc/localtime下，将上海时区拷贝至/etc下。
 
@@ -76,8 +98,9 @@ hwclock -w
 ## 3.安装docker
 
 <div style="text-align: center;">
-  <img src="https://percheung.github.io/blogImg/Docker.png" width="20%" alt="Docker" />
+  <img src="https://percheung.github.io/blogImg/Docker.png" width="15%" alt="Docker" />
 </div>
+
 
 安装需要的软件包， yum-util 提供yum-config-manager功能，另外两个是devicemapper驱动依赖的
 
@@ -139,8 +162,9 @@ docker compose version
 ## 4.安装Java
 
 <div style="text-align: center;">
-  <img src="https://percheung.github.io/blogImg/java.png" width="20%" alt="java" />
+  <img src="https://percheung.github.io/blogImg/java.png" width="10%" alt="java" />
 </div>
+
 
 ### 4.1 下载安装
 
@@ -218,8 +242,9 @@ echo $JAVA_HOME
 ## 5.安装maven
 
 <div style="text-align: center;">
-  <img src="https://percheung.github.io/blogImg/maven.png" width="20%" alt="maven" />
+  <img src="https://percheung.github.io/blogImg/maven.png" width="10%" alt="maven" />
 </div>
+
 
 ### 5.1 下载安装解压
 

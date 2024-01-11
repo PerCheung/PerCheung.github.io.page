@@ -1,6 +1,6 @@
 <template>
   <el-container class="home_container">
-    <iframe src="/html/christmas.html" frameborder="0"
+    <iframe src="/html/galaxy.html" frameborder="0"
             style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: -1;"></iframe>
     <el-header class="home_header">
       <div class="header_left">
@@ -8,7 +8,9 @@
             icon="el-icon-back"
             size="small"
             @click="$router.push('/')"
-            type="primary" plain>
+            style="background-color: rgba(56, 40, 133, 0.8);color: white;"
+            plain
+        >
           返回我的主页
         </el-button>
       </div>
@@ -44,7 +46,9 @@
         <div class="custom_card" v-for="item in filteredToc" :key="item">
           <el-link :href="getLink(item)"
                    :underline="false"
-                   target="_blank">
+                   target="_blank"
+                   style="color: white"
+          >
             <i class="el-icon-paperclip"></i>
             {{ item }}
           </el-link>
@@ -100,7 +104,6 @@ export default {
         });
 
         this.toc = jsonData;
-
         this.loading = false;
       } catch (error) {
         console.error('Error fetching toc data:', error);
@@ -112,11 +115,11 @@ export default {
 
 <style scoped>
 .home_container {
-  background-color: #acbbcc;
+  background-color: black;
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
-  color: black;
+  color: white;
   height: 100%;
   position: fixed;
   top: 0;
@@ -157,19 +160,20 @@ export default {
     width: 72%;
     margin: 0 auto 15px auto;
     padding: 13px 30px;
-    background-color: #edf8ff;
-    border-left: 5px solid #63c0ff;
+    background-color: rgba(56, 40, 133, 0.3);
+    border-left: 5px solid #9768ff;
     border-radius: 4px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 5px 10px rgba(56, 40, 133, 0.7);
     transition: box-shadow 0.2s ease-in-out;
   }
 
   .custom_card:hover {
-    box-shadow: 0 8px 8px rgba(0, 0, 0, 0.2);
+    background-color: rgba(56, 40, 133, 0.5);
+    box-shadow: 0 15px 20px #382885;
   }
 
   .header_center {
-    color: #2768d7;
+    color: white;
     width: 100%;
     margin: 10px auto;
     font-weight: bold;
@@ -206,15 +210,16 @@ export default {
     width: 58%;
     margin: 0 auto 20px auto;
     padding: 20px 30px;
-    background-color: #edf8ff;
-    border-left: 5px solid #63c0ff;
+    background-color: rgba(56, 40, 133, 0.3);
+    border-left: 5px solid #9768ff;
     border-radius: 4px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 5px 10px rgba(56, 40, 133, 0.7);
     transition: box-shadow 0.2s ease-in-out;
   }
 
   .custom_card:hover {
-    box-shadow: 0 8px 8px rgba(0, 0, 0, 0.2);
+    background-color: rgba(56, 40, 133, 0.5);
+    box-shadow: 0 15px 20px #382885;
   }
 
   .header_hr {
@@ -226,7 +231,7 @@ export default {
   }
 
   .header_center {
-    color: #2768d7;
+    color: white;
     font-weight: bold;
     display: flex;
     align-items: center;

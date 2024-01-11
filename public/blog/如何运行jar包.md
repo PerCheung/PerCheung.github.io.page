@@ -1,6 +1,8 @@
 点击返回[🔗我的博客文章目录](https://percheung.github.io/#/toc)
 * 目录
 {:toc}
+<div onclick="window.scrollTo({ top: 0, behavior: 'smooth' });" style="background-color: transparent; position: fixed; bottom: 20px; right: 40px; padding: 10px 10px 5px 10px; cursor: pointer; z-index: 10; border-radius: 13%; box-shadow: 0.5px 3px 7px rgba(0, 0, 0, 0.3);"><img src="https://percheung.github.io/blogImg/backTop.png" alt="TOP" style="background-color: transparent; width: 30px;"></div>
+
 # 如何运行<img src="https://percheung.github.io/blogImg/jar.png" width="50px" alt="" />jar包
 
 >运行jar包是每个Java程序员都要面临的问题，简单到`java -jar`，然而正由于过于简单，这里面很多技巧，却被大家忽略。

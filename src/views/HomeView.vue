@@ -3,7 +3,7 @@
        @touchmove="onTouchMove"
        @touchend="onTouchEnd">
     <el-container class="home_container">
-      <iframe src="/html/christmas.html" frameborder="0"
+      <iframe src="/html/galaxy.html" frameborder="0"
               style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: -1;"></iframe>
       <el-header class="home_header" height="2em">
         <dev :class="{ hovered: drawer }"
@@ -207,7 +207,7 @@ export default {
 
 <style>
 .home_container {
-  background-color: #acbbcc;
+  background-color: black;
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
@@ -239,7 +239,7 @@ export default {
 }
 
 .el-drawer__body {
-  background-color: #acbbcc;
+  background-color: black;
 }
 
 </style>

@@ -1,6 +1,8 @@
 点击返回[🔗我的博客文章目录](https://percheung.github.io/#/toc)
 * 目录
 {:toc}
+<div onclick="window.scrollTo({ top: 0, behavior: 'smooth' });" style="background-color: transparent; position: fixed; bottom: 20px; right: 40px; padding: 10px 10px 5px 10px; cursor: pointer; z-index: 10; border-radius: 13%; box-shadow: 0.5px 3px 7px rgba(0, 0, 0, 0.3);"><img src="https://percheung.github.io/blogImg/backTop.png" alt="TOP" style="background-color: transparent; width: 30px;"></div>
+
 # CentOS系统环境搭建（十一）——借助Git实现一键部署<img src="https://percheung.github.io/blogImg/deploy.png" width="40px" alt="" />
 
 > 我希望只写一个脚本点击一下就能部署最新代码的前后端服务！让我们想想，部署总是很麻烦，一堆一堆的重复操作，如何将重复的步骤去掉，整合进一个sh脚本里，将前后端部署简化为一步操作呢？

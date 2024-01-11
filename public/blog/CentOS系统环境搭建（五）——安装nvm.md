@@ -1,6 +1,8 @@
 点击返回[🔗我的博客文章目录](https://percheung.github.io/#/toc)
 * 目录
 {:toc}
+<div onclick="window.scrollTo({ top: 0, behavior: 'smooth' });" style="background-color: transparent; position: fixed; bottom: 20px; right: 40px; padding: 10px 10px 5px 10px; cursor: pointer; z-index: 10; border-radius: 13%; box-shadow: 0.5px 3px 7px rgba(0, 0, 0, 0.3);"><img src="https://percheung.github.io/blogImg/backTop.png" alt="TOP" style="background-color: transparent; width: 30px;"></div>
+
 # CentOS系统环境搭建（五）——安装nvm
 
 >在我们的日常开发中经常会遇到这种情况：手上有好几个项目，每个项目的需求不同，进而不同项目必须依赖不同版的 NodeJS 运行环境。如果没有一个合适的工具，这个问题将非常棘手。由此[nvm](https://github.com/creationix/nvm)应运而生。nvm是一个node管理工具。使用`nvm` Node版本管理器安装Node.JS。`nvm`允许您在同一台计算机上安装多个Node.JS版本。并且自由切换node版本。

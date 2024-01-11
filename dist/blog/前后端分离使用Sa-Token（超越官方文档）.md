@@ -1,10 +1,12 @@
 点击返回[🔗我的博客文章目录](https://percheung.github.io/#/toc)
 * 目录
 {:toc}
+<div onclick="window.scrollTo({ top: 0, behavior: 'smooth' });" style="background-color: transparent; position: fixed; bottom: 20px; right: 40px; padding: 10px 10px 5px 10px; cursor: pointer; z-index: 10; border-radius: 13%; box-shadow: 0.5px 3px 7px rgba(0, 0, 0, 0.3);"><img src="https://percheung.github.io/blogImg/backTop.png" alt="TOP" style="background-color: transparent; width: 30px;"></div>
 
 # 前后端分离使用<img src="https://percheung.github.io/blogImg/sa-token.png" width="70px" alt="sa-token" />Sa-Token（超越官方文档）
 
 ## 前言
+
 Sa-Token的官方文档链接[🔗https://sa-token.cc/doc.html](https://sa-token.cc/doc.html)在此。
 
 **事先声明**，起一个这样的标题并不是我狂妄自大，而且Sa-Token的官方文档是我见过的少有的写的很好的官方文档（很多知名项目的官方文档可以说一言难尽）。但是，关于前后端分离的这部分，我感到Sa-Token官方文档实在有些过于简略。而我在学习Sa-Token的时候也遇到一个困境，就是关于前后端分离的文章在百度谷歌上基本找不来，大部分所谓原创都是对官方文档的复制粘贴，照搬。因此，在我掌握前后端分离对Sa-Token的使用后，我决定写这样一篇文章，方便后来者对Sa-Token的前后端分离的使用有一个参考。
@@ -18,7 +20,7 @@ Sa-Token的官方文档链接[🔗https://sa-token.cc/doc.html](https://sa-token
 ### 1.创建一个spring boot项目，引入如下两个依赖。
 
 ```xml
-<!-- Sa-Token 权限认证，在线文档：https://sa-token.cc -->
+        <!-- Sa-Token 权限认证，在线文档：https://sa-token.cc -->
         <dependency>
             <groupId>cn.dev33</groupId>
             <artifactId>sa-token-spring-boot-starter</artifactId>
