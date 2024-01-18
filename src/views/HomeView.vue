@@ -218,13 +218,6 @@ export default {
     left: 0;
     width: 100%;
   }
-
-  .home_header {
-    background-color: #9e0d1d;
-    padding-top: 0.5em;
-    font-size: 2em;
-    text-align: center;
-  }
 }
 
 @media screen and (max-width: 1024px) {
@@ -241,13 +234,13 @@ export default {
     left: 0;
     width: 100%;
   }
+}
 
-  .home_header {
-    background-color: #9e0d1d;
-    padding-top: 1em;
-    font-size: 2em;
-    text-align: center;
-  }
+.home_header {
+  background-color: #9e0d1d;
+  padding-top: 0.5em;
+  font-size: 2em;
+  text-align: center;
 }
 
 .home_footer {

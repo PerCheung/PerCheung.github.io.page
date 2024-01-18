@@ -129,7 +129,7 @@ export default {
   .home_container {
     background-image: url("https://store.storeimages.cdn-apple.com/8756/as-images.apple.com/is/cny-header-202401-dragon-clouds?wid=3840&hei=400&fmt=png-alpha&.v=1704936825141");
     background-repeat: no-repeat;
-    background-size: 200%;
+    background-size: 300%;
     background-position: top;
     background-color: #f5f5f7;
     color: #cfa25c;
@@ -163,13 +163,13 @@ export default {
     color: #cfa25c;
     width: 100%;
     margin: 10px auto;
-    font-weight: bold;
-    font-size: 1.2em;
+    font-size: 1em;
+    padding-bottom: 10px;
     transition: font-size 0.3s ease;
   }
 
   .header_center:hover {
-    font-size: 1.5em;
+    font-size: 1.3em;
   }
 
   .header_center:hover img {
@@ -182,7 +182,7 @@ export default {
 
   .header_right_mobile {
     width: 80%;
-    margin: -5px auto 10px auto;
+    margin: 0 auto;
   }
 }
 
