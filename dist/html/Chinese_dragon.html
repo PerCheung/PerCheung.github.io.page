@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport"
+          content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no"/>
+    <!-- 启用360浏览器的极速模式(webkit) -->
+    <meta name="renderer" content="webkit">
+    <!-- 避免IE使用兼容模式 -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- 针对手持设备优化，主要是针对一些老的不识别viewport的浏览器，比如黑莓 -->
+    <meta name="HandheldFriendly" content="true">
+    <!-- 微软的老式浏览器 -->
+    <meta name="MobileOptimized" content="320">
+    <!-- uc强制竖屏 -->
+    <meta name="screen-orientation" content="portrait">
+    <!-- QQ强制竖屏 -->
+    <meta name="x5-orientation" content="portrait">
+    <!-- UC强制全屏 -->
+    <meta name="full-screen" content="yes">
+    <!-- QQ强制全屏 -->
+    <meta name="x5-fullscreen" content="true">
+    <!-- UC应用模式 -->
+    <meta name="browsermode" content="application">
+    <!-- QQ应用模式 -->
+    <meta name="x5-page-mode" content="app">
+    <!-- windows phone 点击无高光 -->
+    <meta name="msapplication-tap-highlight" content="no">
+    <title>中国龙</title>
+    <style>
+        html, body {
+            margin: 0;
+            padding: 0;
+        }
+
+        .image-container {
+            background-color: #9e0d1d;
+            width: 100%;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .image-container img {
+            max-width: 100%;
+            max-height: 100%;
+        }
+    </style>
+    <script>
+        window.addEventListener('DOMContentLoaded', function () {
+            const image = document.querySelector('.image-container img');
+            const imageContainer = document.querySelector('.image-container');
+
+            function updateImageSize() {
+                const windowWidth = window.innerWidth;
+                const windowHeight = window.innerHeight;
+
+                image.style.maxWidth = windowWidth + 'px';
+                image.style.maxHeight = windowHeight + 'px';
+            }
+
+            updateImageSize();
+
+            window.addEventListener('resize', function () {
+                updateImageSize();
+            });
+        });
+    </script>
+</head>
+<body>
+<div class="image-container">
+    <img src="https://store.storeimages.cdn-apple.com/8756/as-images.apple.com/is/cny-hero-202401?wid=4000&hei=1200&fmt=png-alpha&.v=1702886340391"
+         alt="中国龙">
+</div>
+</body>
+</html>

@@ -1,6 +1,5 @@
 点击返回[🔗我的博客文章目录](https://percheung.github.io/#/toc)
-* 目录
-{:toc}
+
 <div onclick="window.scrollTo({ top: 0, behavior: 'smooth' });" style="background-color: transparent; position: fixed; bottom: 20px; right: 40px; padding: 10px 10px 5px 10px; cursor: pointer; z-index: 10; border-radius: 13%; box-shadow: 0.5px 3px 7px rgba(0, 0, 0, 0.3);"><img src="https://percheung.github.io/blogImg/backTop.png" alt="TOP" style="background-color: transparent; width: 30px;"></div>
 
 # CentOS系统环境搭建（四）——安装chatGPT
@@ -50,3 +49,5 @@ docker compose up -d
 然后访问一下`http://ip:3000`，看看
 
 𝓘 𝓵𝓸𝓿𝓮 𝔂𝓸𝓾 𝓽𝓱𝓻𝓮𝓮 𝓽𝓱𝓸𝓾𝓼𝓪𝓷𝓭 𝓽𝓲𝓶𝓮𝓼.
+
+爱（AI）你三千遍。
