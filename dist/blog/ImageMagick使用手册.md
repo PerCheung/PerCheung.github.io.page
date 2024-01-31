@@ -88,3 +88,28 @@ magick mogrify -path "C:\Users\Peter\Pictures\icon" -format ico -resize 256x256 
 通过这个命令，ImageMagick将在指定的文件夹中查找所有的PNG图像文件，将它们调整为指定的尺寸，并将其转换为ICO格式的图标文件，最后输出到指定的路径中。
 
 *该命令让我真切感受到该工具的强大*
+
+### 6.裁剪图片上半部分
+
+只保留图片上面的50%
+
+```bash
+magick input.jpg -crop 100%x50%+0+0 output.jpg
+```
+
+`-crop 100%x50%+0+0`参数告诉ImageMagick裁剪输入图片，保留宽度为100%、高度为50%的部分，并且从左上角开始裁剪。执行这个命令后，你将得到一个名为`output.jpg`的图片文件，其中只包含输入图片上半部分的内容。
+
+### 7.裁剪图片下半部分
+
+只保留图片下面的50%
+
+```bash
+magick input.jpg -gravity south -crop 100%x50% output.jpg
+```
+
+这个命令将会截取`input.jpg`图片的下半部分，并将结果保存为`output.jpg`。
+
+- `input.jpg`：你要截取的原始图片的文件名。
+- `-gravity south`：这个选项将确定截取的起点位置为图片的底部。
+- `-crop 100%x50%`：这个选项将截取图片的宽度为100%（保持原始宽度），高度为50%（即下半部分）。
+- `output.jpg`：你要保存截取结果的文件名。

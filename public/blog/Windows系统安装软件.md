@@ -45,8 +45,6 @@
 
 ### 1.12 Visual Studio Code<img src="https://percheung.github.io/blogImg/vscode.png" width="35px" alt="" />
 
-### 1.13 <img src="https://percheung.github.io/blogImg/Python.png" width="30px" alt="" />Python
-
 ## 2.建议使用安装包安装
 
 ### 2.1 <img src="https://percheung.github.io/blogImg/google.png" width="35px" alt="" />chrome
@@ -60,6 +58,8 @@
 ### 2.4 nvm<img src="https://percheung.github.io/blogImg/nvm-logo-color.png" width="110px" alt="" />
 
 ### 2.5 git<img src="https://percheung.github.io/blogImg/git.png" width="45px" alt="" />
+
+### 2.6 <img src="https://percheung.github.io/blogImg/Python.png" width="30px" alt="" />Python（推荐安装<img src="https://percheung.github.io/blogImg/anaconda.png" width="40px" alt="" />Anaconda，使用内置python）
 
 ## 3.建议使用压缩包安装
 

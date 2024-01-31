@@ -26,3 +26,9 @@
 ## [Windows系统下使用docker安装mysql8和mysql5.7](https://percheung.github.io/blog/Windows系统下使用docker安装mysql8和mysql5.7)
 
 ## [如何将Windows系统备份](https://percheung.github.io/blog/如何将Windows系统备份)
+
+## [windows下载安装ffmpeg最新版](https://percheung.github.io/blog/windows下载安装ffmpeg最新版)
+
+## [windows下载安装ImageMagick](https://percheung.github.io/blog/windows下载安装ImageMagick)
+
+## [Windows安装Anaconda教程](https://percheung.github.io/blog/Windows安装Anaconda教程)

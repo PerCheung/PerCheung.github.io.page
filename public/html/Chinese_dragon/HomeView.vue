@@ -2,32 +2,10 @@
   <div @touchstart="onTouchStart"
        @touchmove="onTouchMove"
        @touchend="onTouchEnd">
-    <div @click="toggleGalaxyLayer"
-         style="
-         position: fixed;
-         bottom: 40px;
-         left: 20px;
-         cursor: pointer;
-         border-radius: 50%;
-         overflow: hidden;
-         transition: width 0.5s, height 0.5s;
-         z-index: 2;"
-         @mouseover="increase_galaxy"
-         @mouseout="reset_galaxy"
-         :style="{
-         width: isHovered_galaxy_width ? '100px' : '70px',
-         height: isHovered_galaxy_height ?'100px' : '70px'}"
-    >
-      <iframe src="/html/galaxy.html" frameborder="0"
-              style="width: 100%; height: 100%; pointer-events: none;"></iframe>
-    </div>
     <el-container class="home_container">
-      <iframe src="/html/galaxy.html" frameborder="0"
-              :style="{ position: 'fixed', top: '0', left: '0', width: '100%', height: '100%', zIndex: galaxy }"
-      ></iframe>
-      <el-header class="home_header" height="2em">
+      <el-header class="home_header">
         <dev :class="{ hovered: drawer }"
-             style="cursor: pointer;transition: font-size 0.2s ease;"
+             style="cursor: pointer;transition: font-size 0.3s ease;"
              @click="drawer=true">
           求知若渴
           <img src="@/assets/code.png" style="height: 0.8em" alt="NO">
@@ -135,11 +113,8 @@ export default {
   name: 'HomeView',
   data() {
     return {
-      galaxy: -1,
       drawer: true,
       isHovered_github: false,
-      isHovered_galaxy_width: false,
-      isHovered_galaxy_height: false,
       isHovered_csdn: false,
       isHovered_openai: false,
       isHovered_nainiu: false,
@@ -155,18 +130,6 @@ export default {
   created() {
   },
   methods: {
-    toggleGalaxyLayer() {
-      this.galaxy = this.galaxy === -1 ? 1 : -1;
-      this.drawer = this.galaxy === -1;
-    },
-    increase_galaxy() {
-      this.isHovered_galaxy_width = true;
-      this.isHovered_galaxy_height = true;
-    },
-    reset_galaxy() {
-      this.isHovered_galaxy_width = false;
-      this.isHovered_galaxy_height = false;
-    },
     increase_github() {
       this.isHovered_github = true;
     },
@@ -241,30 +204,49 @@ export default {
 </script>
 
 <style>
-.home_container {
-  background-color: black;
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
-  color: white;
-  height: 100%;
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
+@media screen and (min-width: 1024px) {
+  .home_container {
+    background-image: url("@/assets/hero_cny_2024__f8hb8sc2v8ia_large_2x.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    background-color: #9e0d1d;
+    color: #cfa25c;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .home_container {
+    background-image: url("@/assets/hero_cny_2024__f8hb8sc2v8ia_small_2x.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    background-color: #9e0d1d;
+    color: #cfa25c;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+  }
 }
 
 .home_header {
-  background-color: transparent;
+  background-color: #9e0d1d;
   padding-top: 0.5em;
-  font-size: 24px;
+  font-size: 2em;
   text-align: center;
 }
 
 .home_footer {
   background-color: transparent;
   text-align: center;
-  color: rgb(142, 142, 145);
+  color: #cfa25c;
   font-size: 0.8em;
   line-height: 80px;
 }
@@ -274,7 +256,7 @@ export default {
 }
 
 .el-drawer__body {
-  background-color: black;
+  background-color: #9e0d1d;
 }
 
 </style>

@@ -256,7 +256,7 @@ export default {
 
 .home_header {
   background-color: transparent;
-  padding-top: 0.3em;
+  padding-top: 0.5em;
   font-size: 24px;
   text-align: center;
 }
