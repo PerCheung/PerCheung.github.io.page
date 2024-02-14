@@ -3,7 +3,7 @@
 {:toc}
 <div onclick="window.scrollTo({top:0,behavior:'smooth'});" style="background-color:white;position:fixed;bottom:20px;right:40px;padding:10px 10px 5px 10px;cursor:pointer;z-index:10;border-radius:13%;box-shadow:0.5px 3px 7px rgba(0,0,0,0.3);"><img src="https://percheung.github.io/blogImg/backTop.png" alt="TOP" style="background-color:white;width:30px;"></div>
 
-# CentOS系统环境搭建（十）——运行Java服务<img src="https://percheung.github.io/blogImg/java.png" width="50px" alt="ffmpeg" />
+# CentOS系统环境搭建（十）——运行<img src="https://percheung.github.io/blogImg/java.png" width="50px" alt="" />Java服务
 
 > 我是用jar包的方式运行的Java服务，下面讲讲我是怎么做的，这里的内容是我腾讯服务器部署的README.md文件的内容。
 
