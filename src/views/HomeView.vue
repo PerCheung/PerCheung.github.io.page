@@ -87,7 +87,7 @@
           </el-link>
           <el-link style="width: 100px;height: 100px" href="https://www.openai-hk.com/m/ai" target="_blank"
                    :underline="false">
-            <img src="https://www.openai-hk.com/m/static/img/open.2ef5b3da.png"
+            <img src="@/assets/openai-hk.png"
                  alt="openai-hk"
                  @mouseover="increase_openai_hk"
                  @mouseout="reset_openai_hk"
