@@ -102,6 +102,16 @@
                  :style="{ width: isHovered_openkey ? '100px' : '70px' }"/>
           </el-link>
           <el-link style="width: 100px;height: 100px"
+                   href="https://ecs.console.aliyun.com"
+                   target="_blank"
+                   :underline="false">
+            <img src="@/assets/aliyun.png"
+                 alt="aliyun"
+                 @mouseover="increase_aliyun"
+                 @mouseout="reset_aliyun"
+                 :style="{ width: isHovered_aliyun ? '100px' : '70px' }"/>
+          </el-link>
+          <el-link style="width: 100px;height: 100px"
                    href="https://console.cloud.tencent.com/lighthouse/instance/index?rid=4"
                    target="_blank"
                    :underline="false">
@@ -120,6 +130,16 @@
                  @mouseover="increase_bilibili"
                  @mouseout="reset_bilibili"
                  :style="{ width: isHovered_bilibili ? '100px' : '70px' }"/>
+          </el-link>
+          <el-link style="width: 100px;height: 100px"
+                   href="http://47.113.116.177"
+                   target="_blank"
+                   :underline="false">
+            <img src="@/assets/petercheung.png"
+                 alt="petercheung"
+                 @mouseover="increase_percheung"
+                 @mouseout="reset_percheung"
+                 :style="{ width: isHovered_percheung ? '100px' : '70px' }"/>
           </el-link>
         </el-drawer>
       </el-main>
@@ -146,8 +166,10 @@ export default {
       isHovered_openai_hk: false,
       isHovered_tencent: false,
       isHovered_bilibili: false,
+      isHovered_percheung: false,
       isHovered_toc: false,
       isHovered_openkey: false,
+      isHovered_aliyun: false,
       start: 0,
       move: 0
     };
@@ -203,6 +225,12 @@ export default {
     reset_openkey() {
       this.isHovered_openkey = false;
     },
+    increase_aliyun() {
+      this.isHovered_aliyun = true;
+    },
+    reset_aliyun() {
+      this.isHovered_aliyun = false;
+    },
     increase_tencent() {
       this.isHovered_tencent = true;
     },
@@ -214,6 +242,12 @@ export default {
     },
     reset_bilibili() {
       this.isHovered_bilibili = false;
+    },
+    increase_percheung() {
+      this.isHovered_percheung = true;
+    },
+    reset_percheung() {
+      this.isHovered_percheung = false;
     },
     increase_toc() {
       this.isHovered_toc = true;
